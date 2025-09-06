@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - GRIYA LAUNDRY CALISTA</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+     /* Header dengan logo kecil */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px;
+    }
+    header .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    header h1 {
+      margin: 0;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Logo besar di atas slideshow */
+    .logo-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .logo-container img {
+      width: 150px;
+      height: auto;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: fadeZoomIn 1.5s ease forwards;
+    }
+
+    /* Animasi */
+    @keyframes fadeZoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      position: relative;
+      max-width: 600px;     
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    /* Gambar */
+    .mySlides {
+      display: none;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Caption */
+    .caption {
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Tombol navigasi */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -20px;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 3px;
+      user-select: none;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    /* Titik indikator */
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: navy;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.jpeg" alt="Logo Perusahaan">
+    </div>
+    <div>
+    <h1>GRIYA LAUNDRY CALISTA</h1>
+    <p>Perum Griya Permai No. A4</p>
+    <p>Jl Dharma Bakti Medono Pekalongan</p>
+     </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tentang.html">Tentang</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+  <main>
+     
+    <h2>Selamat Datang!</h2>
+    <p>KAMI MELAYANI CUCI KOMPLIT, SETRIKA, CUCI SEPATU</p>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <img src="images/foto 1.jpg" alt="Foto 1" style="width:100%">
+        <div class="caption">MELAYANI DENGAN SEPENUH HATI</div>
+      </div>
+      <div class="mySlides">
+        <img src="images/foto 2.jpg" alt="Foto 2" style="width:100%">
+        <div class="caption">siap delivery sampai depan pintu</div>
+      </div>
+      <div class="mySlides">
+        <img src="images/foto 3.jpg" alt="Foto 3" style="width:100%">
+        <div class="caption">delivery order gratis</div>
+      </div>
+
+      <!-- Tombol -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Titik indikator -->
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <p>DIJAMIN BERSIH RAPI DAN WANGI</p>
+  </main>
+
+  <footer>
+    <p>&copy; DEWI FITRIANA 2025 UPGRADE OTAK</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 3000); // Ganti setiap 3 detik
+    }
+
+    function plusSlides(n) {
+      slideIndex += n - 1;
+      showManualSlide(slideIndex);
+    }
+
+    function currentSlide(n) {
+      slideIndex = n;
+      showManualSlide(slideIndex - 1);
+    }
+
+    function showManualSlide(n) {
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n >= slides.length) slideIndex = 0;
+      if (n < 0) slideIndex = slides.length - 1;
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex].style.display = "block";  
+      dots[slideIndex].className += " active";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tentang - GRIYA LAUNDRY CALISTA</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+     /* Header dengan logo kecil */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px;
+    }
+    header .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    header h1 {
+      margin: 0;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Logo besar di atas slideshow */
+    .logo-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .logo-container img {
+      width: 150px;
+      height: auto;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: fadeZoomIn 1.5s ease forwards;
+    }
+
+    /* Animasi */
+    @keyframes fadeZoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .tentang {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .tentang h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tentang img {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 200px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .visi-misi {
+      margin-top: 20px;
+    }
+    .visi-misi h3 {
+      margin-bottom: 10px;
+    }
+    .team {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .member {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.jpeg" alt="Logo Perusahaan">
+    </div>
+    <div>
+    <h1>GRIYA LAUNDRY CALISTA</h1>
+    <p>Perum Griya Permai No. A4</p>
+    <p>Jl Dharma Bakti Medono Pekalongan</p>
+     </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tentang.html">Tentang</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+  <main>
+    <div class="tentang">
+      <h2>Tentang Kami</h2>
+      <img src="images/foto 1.jpg" alt="Profil Website">
+
+      <p>
+        Kami melayani cuci komplit,cuci saja, setrika saja, selimut, badcover, cuci sepatu.
+      </p>
+
+      <div class="visi-misi">
+        <h3>Visi</h3>
+        <p>Menjadi laundry dengan pelayanan terbaik dikota pekalongan anti baju hilang dan tertukar.</p>
+
+        <h3>Misi</h3>
+        <ul>
+          <li>Melayani cuci komplit, cuci saja, setrika saja.</li>
+          <li>Melayani cuci sepatu dan cuci tas.</li>
+          <li>menjadikan pakaian customer kembali bersih rapi dan wangi</li>
+        </ul>
+      </div>
+
+      <div class="team">
+        <div class="member">
+          <img src="images/foto 2.jpg" alt="Anggota 1">
+          <h4>Dewi Fitriana</h4>
+          <p>Founder & Developer</p>
+        </div>
+        <div class="member">
+          <img src="images/foto 3.jpg" alt="Anggota 2">
+          <h4>Delivery order</h4>
+          <p>Gratis</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; DEWI FITRIANA 2025 UPGRADE OTAK</p>
+  </footer>
+</body>
+</html>
